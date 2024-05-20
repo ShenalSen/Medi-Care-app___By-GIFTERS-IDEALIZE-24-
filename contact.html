@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e5751;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #app {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: sans-serif;
+            margin: 20px 0;
+            font-size: 3.5rem;
+            margin-top: 120px;
+        }
+
+        .toppar {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.9rem;
+        }
+
+        .contact-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .contact-column {
+            max-width: 30%;
+        }
+
+        .contact-column h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .contact-column p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .contact-column i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto" id="navbar-brandme-auto" href="#">
+                <img id="Logo" src="images/Logo.png" alt="Logo">
+            </a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Medi Care</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3" id="bar">
+
+                        <li class="nav-item" v-for="link in navLinks" :key="link.text">
+                            <a id="nav-link" class="nav-link mx-lg-2" :href="link.href">{{ link.text }}</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="login">
+                <a href="login.html" class="signup-button">Sign in</a>
+                <a href="login.html" class="login-button">Login</a>
+            </div>
+
+            <button class="navbar-toggler pe-0" id="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- End Navbar -->
+
+    <div id="app">
+        <h1 class="section-title">Get in Touch</h1>
+        <div class="contact-section">
+            <div class="contact-column" v-for="(section, index) in contactInfo" :key="index">
+                <i :class="section.icon"></i>
+                <h3 class="toppar">{{ section.title }}</h3>
+                <p v-for="(info, idx) in section.details" :key="idx">{{ info }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const connect = Vue.createApp({
+            data() {
+                return {
+                    contactInfo: [
+                        {
+                            icon: "bi bi-geo-alt-fill",
+                            title: "Address",
+                            details: [
+                                "Weifield Group Contracting",
+                                "6950 S. Jordan Road",
+                                "Centennial, CO 80112",
+                                "Northern Colorado Office",
+                                "6775 Sherman Street, Loveland, CO 80538",
+                                "Southern Colorado Office",
+                                "4474 Barnes Road, Colorado Springs, CO 80917",
+                                "Wyoming Office",
+                                "308 Southwest Dr Unit E, Cheyenne, WY 82007",
+                                "Texas Office",
+                                "1421 Wells Branch Pkwy. Ste 100, Pflugerville, TX 78660",
+                                "Tennessee Office",
+                                "1125 Harpeth Industrial Ct, Suite A, Franklin, TN 37064"
+                            ]
+                        },
+                        {
+                            icon: "bi bi-telephone-fill",
+                            title: "Phone",
+                            details: [
+                                "Weifield Group Contracting",
+                                "877.WEIFIELD phone",
+                                "Weifield 24/7 Service Department",
+                                "877.WEIFIELD (Then press 0 for emergency calls)",
+                                "Northern Colorado Office",
+                                "877.WEIFIELD phone",
+                                "Wyoming Office",
+                                "877.WEIFIELD phone",
+                                "Texas Office",
+                                "877.WEIFIELD phone",
+                                "Tennessee Office",
+                                "877.WEIFIELD phone"
+                            ]
+                        },
+                        {
+                            icon: "bi bi-envelope-fill",
+                            title: "Email",
+                            details: [
+                                "Request for Proposal",
+                                "info@weifieldgroup.com",
+                                "All Bid Opportunities",
+                                "estimating@weifieldgroup.com",
+                                "Electrical Service Calls",
+                                "service@weifieldgroup.com",
+                                "Employment Opportunities",
+                                "recruiting@weifieldgroup.com"
+                            ]
+                        }
+                    ]
+                };
+            }
+        });
+
+        connect.mount('#app');
+
+    </script>
+
+    <footer style="margin-top: 160px;
+max-width: fit-screen;">
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">our Team</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy;2024; Designed by <span class="designer">Nenuka</span></p>
+        </div>
+    </footer>
+
+    <script src="script_1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
