@@ -5,7 +5,7 @@ const app = createApp({
     data() {
         return {
             navLinks: [
-                { text: 'Home', href: 'home.html' },
+                { text: 'Home', href: 'index.html' },
                 { text: 'Community', href: 'community.html' },
                 { text: 'Treatment', href: 'treatment.html' },
                 { text: 'Connect', href: 'contact.html' }
