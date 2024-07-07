@@ -1,0 +1,89 @@
+body{
+    background-image: url(medicare.jpg);
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+.search-container {
+    background: linear-gradient(to bottom, #25719c, #144059);
+    padding: 10px 10px 10px 10px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width:1000px;
+    margin-left:350px ;
+    
+}
+
+.back-button{
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+ .back-button:hover
+ {
+    background-color: #144059;
+}
+ .back-button {
+    margin-right: auto;
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    border-color: #00FFFB;
+    border-style: solid;
+    border-width: 2.5px;
+    padding: 5px 10px;
+    margin-left  :  100px;
+    flex-grow: 1;
+    position: relative;
+    height: 30px;
+    
+}
+
+.search-input-container .search-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.search-input-container input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.search-input-container .loading-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-input-container .loading-icon i {
+    font-size: 20px;
+    color: #25719c;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
