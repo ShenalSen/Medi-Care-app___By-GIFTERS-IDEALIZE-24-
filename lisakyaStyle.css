@@ -1,0 +1,25 @@
+    body {
+        background-color: #20232a;
+        color: white;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+    }
+
+    .search-results {
+        background-color: #282c34;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .ai-advice {
+        background-color: #61dafb;
+        color: #20232a;
+    }
+
+    .user-query {
+        color: #61dafb;
+    }
