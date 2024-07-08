@@ -84,7 +84,7 @@ body {
     align-items: center;
 }
 .search-results {
-    margin-top: 20px;
+    margin-top: 2px;
 }
 .result {
     background:linear-gradient(to right, #BDFFFE, #206389);
@@ -140,10 +140,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 10px;
-    height: 50px;
+    
 }
 .filters select, .filters button {
     margin: 0 10px;
@@ -155,25 +152,27 @@ h1 {
 
 .results{
     background-color: #232B3C;
-    height: 50px;
+    height: 40px;
     width: 150px;
     border-radius: 20px;
-    border: 5ch;
+    border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
     color: white;
     
 
 }
-
 .results-1{
 
-background-color: #232B3C;
-height: 50px;
-width: 150px;
-border-radius: 20px;
-border: 5ch;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-color: white;
-
+    background-color: #232B3C;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+.filters-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }

@@ -26,7 +26,8 @@
 
         <div class="container-main">
             <h1>Medi Care Community</h1>
-            <div class="filters">
+            <div class="filters-wrapper">
+             <div class="filters">
                 <button @click="results " class="results">5 results </button>
                 <select v-model="selectedFilter">
                     <option value="mostStars">Most Stars</option>
@@ -36,7 +37,8 @@
                 </select>
 
                 <button @click="save" class="results-1 ">Save</button>
-            </div>
+             </div>
+            </div> 
 
             <div class="container">
                 <div class="search-results">
