@@ -1,637 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Community</title>
-    <script src="https://unpkg.com/vue@3"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/vue@3"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-image: url("images/comback.jpg");
-        color: #333;
-        margin: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/vue@3"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      #app {
-        width: 1700px;
-        padding: 10px;
-        display: flex;
-      }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("images/comback.jpg");
+      color: #333;
+      margin: 0;
+    }
 
-      #filters {
-        width: 200px;
-        margin-right: 20px;
-      }
+    #app {
+      width: 1700px;
+      padding: 10px;
+      display: flex;
+    }
 
-      .comment-box {
-        background-color: #1e1e2f;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 15px;
-        padding: 20px;
-        color: #ffffff;
-        width: 800px;
-      }
+    #filters {
+      width: 200px;
+      margin-right: 20px;
+    }
 
-      #star {
-        color: gold;
-      }
+    .comment-box {
+      background-color: #1e1e2f;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+      padding: 20px;
+      color: #ffffff;
+      width: 800px;
+    }
 
-      .comment {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    #star {
+      color: gold;
+    }
 
-      .comment-details {
-        max-width: 70%;
-      }
+    .comment {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      .comment-meta {
-        text-align: right;
-        font-size: 14px;
-        color: #999;
-      }
+    .comment-details {
+      max-width: 70%;
+    }
 
-      .comment p {
-        margin: 5px 0;
-      }
+    .comment-meta {
+      text-align: right;
+      font-size: 14px;
+      color: #999;
+    }
 
-      #filters label {
-        font-size: 14px;
-        padding-bottom: 5px;
-        padding-left: 2px;
-      }
+    .comment p {
+      margin: 5px 0;
+    }
 
-      .filter-box {
-        background-color: #b7b8b8;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-left: 20px;
-      }
+    #filters label {
+      font-size: 14px;
+      padding-bottom: 5px;
+      padding-left: 2px;
+    }
 
-      .boca-box {
-        background-color: #cffdfd;
-        border-radius: 7px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-        margin-left: 40px;
-        width: 370px;
-      }
+    .filter-box {
+      background-color: #b7b8b8;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-left: 20px;
+    }
 
-      .boca-box img {
-        width: 310px;
-      }
+    .boca-box {
+      background-color: #cffdfd;
+      border-radius: 7px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      margin-left: 40px;
+      width: 370px;
+    }
 
-      .icon {
-        margin-right: 5px;
-      }
+    .boca-box img {
+      width: 310px;
+    }
 
-      #tag {
-        color: aqua;
-      }
+    .icon {
+      margin-right: 5px;
+    }
 
-      #tag-line {
-        float: right;
-        margin-left: 630px;
-      }
+    #tag {
+      color: aqua;
+    }
 
-      #fak {
-        padding-top: 15px;
-        font-size: 18px;
-        font-weight: bold;
-      }
+    #tag-line {
+      float: right;
+      margin-left: 630px;
+    }
 
-      .user-tag {
-        background-color: #333;
-        border-radius: 20px;
-        padding: 4px 6px;
-        margin-right: 10px;
-      }
+    #fak {
+      padding-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
 
-      .comment-info {
-        display: flex;
-        align-items: center;
-      }
+    .user-tag {
+      background-color: #333;
+      border-radius: 20px;
+      padding: 4px 6px;
+      margin-right: 10px;
+    }
 
-      .comment-text {
-        font-weight: bold;
-      }
+    .comment-info {
+      display: flex;
+      align-items: center;
+    }
 
-      .comment-icons {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-    </style>
-  </head>
+    .comment-text {
+      font-weight: bold;
+    }
 
-  <body>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand me-auto" id="navbar-brandme-auto" href="#">
-          <img id="Logo" src="images/Logo.png" alt="Logo" />
-        </a>
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Medi Care</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul
-              class="navbar-nav justify-content-center flex-grow-1 pe-3"
-              id="bar"
-            >
-              <li class="nav-item" v-for="link in navLinks" :key="link.text">
-                <a id="nav-link" class="nav-link mx-lg-2" :href="link.href"
-                  >{{ link.text }}</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
+    .comment-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  </style>
+</head>
 
-        <div class="login">
-          <a href="login.html" class="signup-button">Sign in</a>
-          <a href="login.html" class="login-button">Login</a>
-        </div>
-
-        <button
-          class="navbar-toggler pe-0"
-          id="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-    <h1
-      style="
+<body>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <nav-bar></nav-bar>
+  <h1 style="
         font-weight: 700;
         color: aqua;
         font-size: 40px;
         text-align: center;
         margin-top: 130px;
-      "
-    >
-      Medi-Care Community
-    </h1>
-    <div id="app">
-      <div id="filters" class="filter-box">
-        <h5 style="font-size: 25px; font-weight: bold">Filters</h5>
-        <h5 id="fak">Time-Based</h5>
-        <div>
-          <input type="checkbox" id="Newest" value="Newest" v-model="filters" />
-          <label for="Newest">Newest</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="oldest"
-            value="oldest"
-            v-model="filters"
-          />
-          <label for="oldest">Oldest</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="updated"
-            value="updated"
-            v-model="filters"
-          />
-          <label for="updated">Recently Updated</label>
-        </div>
-        <h5 id="fak">Popularity-Based</h5>
-        <div>
-          <input
-            type="checkbox"
-            id="Liked"
-            value="Liked"
-            v-model="filters"
-          />
-          <label for="Liked">Most Liked</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="Commented"
-            value="Commented"
-            v-model="filters"
-          />
-          <label for="Commented">Most Commented</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="Trending"
-            value="Trending"
-            v-model="filters"
-          />
-          <label for="Trending">Trending</label>
-        </div>
-        <h5 id="fak">Communities</h5>
-        <div>
-          <input
-            type="checkbox"
-            id="allergies"
-            value="allergies"
-            v-model="filters"
-          />
-          <label for="allergies">Allergies</label>
-        </div>
-        <div>
-          <input type="checkbox" id="asthma" value="asthma" v-model="filters" />
-          <label for="asthma">Asthma</label>
-        </div>
-        <div>
-            <input type="checkbox" id="chronic-conditions" value="chronic-conditions" v-model="filters" />
-            <label for="chronic-conditions">Chronic Conditions</label>
-          </div>
-          <div>
-            <input type="checkbox" id="mental-health" value="mental-health" v-model="filters" />
-            <label for="mental-health">Mental Health</label>
-          </div>
-          <div>
-            <input type="checkbox" id="womens-health" value="womens-health" v-model="filters" />
-            <label for="womens-health">Women's Health</label>
-          </div>
-          <div>
-            <input type="checkbox" id="mens-health" value="mens-health" v-model="filters" />
-            <label for="mens-health">Men's Health</label>
-          </div>
-          <div>
-            <input type="checkbox" id="childrens-health" value="childrens-health" v-model="filters" />
-            <label for="childrens-health">Children's Health</label>
-          </div>
-          <div>
-            <input type="checkbox" id="elderly-health" value="elderly-health" v-model="filters" />
-            <label for="elderly-health">Elderly Health</label>
-          </div>
-          <div>
-            <input type="checkbox" id="preventive-care" value="preventive-care" v-model="filters" />
-            <label for="preventive-care">Preventive Care</label>
-          </div>
-          <div>
-            <input type="checkbox" id="infectious-diseases" value="infectious-diseases" v-model="filters" />
-            <label for="infectious-diseases">Infectious Diseases</label>
-          </div>
-          <div>
-            <input type="checkbox" id="lifestyle" value="lifestyle" v-model="filters" />
-            <label for="lifestyle">Lifestyle</label>
-          </div>
-          <div>
-            <input type="checkbox" id="medical-procedures" value="medical-procedures" v-model="filters" />
-            <label for="medical-procedures">Medical Procedures</label>
-          </div>
-          <div>
-            <input type="checkbox" id="alternative-medicine" value="alternative-medicine" v-model="filters" />
-            <label for="alternative-medicine">Alternative Medicine</label>
-          </div>
-          <div>
-            <input type="checkbox" id="emergency-care" value="emergency-care" v-model="filters" />
-            <label for="emergency-care">Emergency Care</label>
-          </div>
-          <div>
-            <input type="checkbox" id="dietary-concerns" value="dietary-concerns" v-model="filters" />
-            <label for="dietary-concerns">Dietary Concerns</label>
-          </div>
-          <div>
-            <input type="checkbox" id="sleep-disorders" value="sleep-disorders" v-model="filters" />
-            <label for="sleep-disorders">Sleep Disorders</label>
-          </div>
-          <div>
-            <input type="checkbox" id="skin-care" value="skin-care" v-model="filters" />
-            <label for="skin-care">Skin Care</label>
-          </div>
-          <div>
-            <input type="checkbox" id="diabetes" value="diabetes" v-model="filters" />
-            <label for="diabetes">Diabetes</label>
-          </div>
-          
+      ">
+    Medi-Care Community
+  </h1>
+  <div id="app">
+    <div id="filters" class="filter-box">
+      <h5 style="font-size: 25px; font-weight: bold">Filters</h5>
+      <h5 id="fak">Time-Based</h5>
+      <div>
+        <input type="checkbox" id="Newest" value="Newest" v-model="filters" />
+        <label for="Newest">Newest</label>
       </div>
       <div>
-        <div
-          class="comment-box"
-          v-for="(comment, index) in filteredComments"
-          :key="index"
-        >
-          <div class="comment">
-            <div class="comment-details">
-              <div class="comment-info">
-                <div class="user-tag">@{{ comment.user }}</div>
-                <div>{{ comment.date }}</div>
+        <input type="checkbox" id="oldest" value="oldest" v-model="filters" />
+        <label for="oldest">Oldest</label>
+      </div>
+      <div>
+        <input type="checkbox" id="updated" value="updated" v-model="filters" />
+        <label for="updated">Recently Updated</label>
+      </div>
+      <h5 id="fak">Popularity-Based</h5>
+      <div>
+        <input type="checkbox" id="Liked" value="Liked" v-model="filters" />
+        <label for="Liked">Most Liked</label>
+      </div>
+      <div>
+        <input type="checkbox" id="Commented" value="Commented" v-model="filters" />
+        <label for="Commented">Most Commented</label>
+      </div>
+      <div>
+        <input type="checkbox" id="Trending" value="Trending" v-model="filters" />
+        <label for="Trending">Trending</label>
+      </div>
+      <h5 id="fak">Communities</h5>
+      <div>
+        <input type="checkbox" id="allergies" value="allergies" v-model="filters" />
+        <label for="allergies">Allergies</label>
+      </div>
+      <div>
+        <input type="checkbox" id="asthma" value="asthma" v-model="filters" />
+        <label for="asthma">Asthma</label>
+      </div>
+      <div>
+        <input type="checkbox" id="chronic-conditions" value="chronic-conditions" v-model="filters" />
+        <label for="chronic-conditions">Chronic Conditions</label>
+      </div>
+      <div>
+        <input type="checkbox" id="mental-health" value="mental-health" v-model="filters" />
+        <label for="mental-health">Mental Health</label>
+      </div>
+      <div>
+        <input type="checkbox" id="womens-health" value="womens-health" v-model="filters" />
+        <label for="womens-health">Women's Health</label>
+      </div>
+      <div>
+        <input type="checkbox" id="mens-health" value="mens-health" v-model="filters" />
+        <label for="mens-health">Men's Health</label>
+      </div>
+      <div>
+        <input type="checkbox" id="childrens-health" value="childrens-health" v-model="filters" />
+        <label for="childrens-health">Children's Health</label>
+      </div>
+      <div>
+        <input type="checkbox" id="elderly-health" value="elderly-health" v-model="filters" />
+        <label for="elderly-health">Elderly Health</label>
+      </div>
+      <div>
+        <input type="checkbox" id="preventive-care" value="preventive-care" v-model="filters" />
+        <label for="preventive-care">Preventive Care</label>
+      </div>
+      <div>
+        <input type="checkbox" id="infectious-diseases" value="infectious-diseases" v-model="filters" />
+        <label for="infectious-diseases">Infectious Diseases</label>
+      </div>
+      <div>
+        <input type="checkbox" id="lifestyle" value="lifestyle" v-model="filters" />
+        <label for="lifestyle">Lifestyle</label>
+      </div>
+      <div>
+        <input type="checkbox" id="medical-procedures" value="medical-procedures" v-model="filters" />
+        <label for="medical-procedures">Medical Procedures</label>
+      </div>
+      <div>
+        <input type="checkbox" id="alternative-medicine" value="alternative-medicine" v-model="filters" />
+        <label for="alternative-medicine">Alternative Medicine</label>
+      </div>
+      <div>
+        <input type="checkbox" id="emergency-care" value="emergency-care" v-model="filters" />
+        <label for="emergency-care">Emergency Care</label>
+      </div>
+      <div>
+        <input type="checkbox" id="dietary-concerns" value="dietary-concerns" v-model="filters" />
+        <label for="dietary-concerns">Dietary Concerns</label>
+      </div>
+      <div>
+        <input type="checkbox" id="sleep-disorders" value="sleep-disorders" v-model="filters" />
+        <label for="sleep-disorders">Sleep Disorders</label>
+      </div>
+      <div>
+        <input type="checkbox" id="skin-care" value="skin-care" v-model="filters" />
+        <label for="skin-care">Skin Care</label>
+      </div>
+      <div>
+        <input type="checkbox" id="diabetes" value="diabetes" v-model="filters" />
+        <label for="diabetes">Diabetes</label>
+      </div>
+
+    </div>
+    <div>
+      <div class="comment-box" v-for="(comment, index) in filteredComments" :key="index">
+        <div class="comment">
+          <div class="comment-details">
+            <div class="comment-info">
+              <div class="user-tag">@{{ comment.user }}</div>
+              <div>{{ comment.date }}</div>
+            </div>
+            <p class="comment-text">{{ comment.text }}</p>
+            <div class="comment-icons">
+              <div>
+                <i class="bx bxs-star" id="star"></i> {{ comment.stars }}
               </div>
-              <p class="comment-text">{{ comment.text }}</p>
-              <div class="comment-icons">
-                <div>
-                  <i class="bx bxs-star" id="star"></i> {{ comment.stars }}
-                </div>
-                <div>
-                  <i class="bx bx-message-rounded icon"></i> {{
-                  comment.commentsCount }}
-                </div>
-                <div id="tag-line">
-                  <i class="bx bxs-tag-alt" id="tag"></i> {{ comment.category }}
-                </div>
+              <div>
+                <i class="bx bx-message-rounded icon"></i> {{
+                comment.commentsCount }}
+              </div>
+              <div id="tag-line">
+                <i class="bx bxs-tag-alt" id="tag"></i> {{ comment.category }}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="boca-box">
-        <h2 style="color: rgb(4, 0, 255); font-weight: bolder">
-          Unlock Your Best Self with Medi-Care: Your Health, Our Priority!
-        </h2>
-        <img src="images/add1.png" alt="add1" id="add1" />
-
-        <h3 style="color: rgb(2, 0, 90); font-weight: bold">
-          Join Our Community Today and Embrace a Healthier, Happier Life!
-        </h3>
-        <p>
-          Are you ready to take charge of your health and well-being? At
-          Medi-Care, we're dedicated to helping you achieve your health goals
-          through personalized care, expert advice, and a supportive community.
-          Whether you're looking to improve your fitness, manage a chronic
-          condition, or simply live a healthier life, we're here to guide you
-          every step of the way.
-        </p>
-        <h3>Our comprehensive health services include:</h3>
-        <ul>
-          <li>
-            <strong>Expert Consultations:</strong> Access to top healthcare
-            professionals who provide tailored advice and treatment plans.
-          </li>
-          <li>
-            <strong>Fitness Programs:</strong> Customized workout plans to suit
-            your lifestyle and fitness level.
-          </li>
-          <li>
-            <strong>Nutritional Guidance:</strong> Diet plans and healthy eating
-            tips from certified nutritionists.
-          </li>
-          <li>
-            <strong>Mental Wellness:</strong> Resources and support for stress
-            management, mindfulness, and mental health.
-          </li>
-          <li>
-            <strong>Community Support:</strong> Join our vibrant community to
-            share experiences, get support, and stay motivated.
-          </li>
-        </ul>
-      </div>
     </div>
+    <div class="boca-box">
+      <h2 style="color: rgb(4, 0, 255); font-weight: bolder">
+        Unlock Your Best Self with Medi-Care: Your Health, Our Priority!
+      </h2>
+      <img src="images/add1.png" alt="add1" id="add1" />
 
-    <script>
-      const combox = Vue.createApp({
-        data() {
-          return {
-            filters: [],
-            comments: [
-              {
-                user: "Shehan67893090",
-                date: "2 mins ago",
-                text: "What are the risk factors for heart disease?",
-                commentsCount: 0,
-                stars: 3,
-                category: "Newest",
-              },
-              {
-                user: "Taukan67893090",
-                date: "5 mins ago",
-                text: "How can I manage anxiety effectively?",
-                commentsCount: 1,
-                stars: 5,
-                category: "Newest",
-              },
-              {
-                user: "Chandrapala6784",
-                date: "10 mins ago",
-                text: "What are the risk factors for heart disease?",
-                commentsCount: 1,
-                stars: 12,
-                category: "allergies",
-              },
-              {
-                user: "mohommad5563",
-                date: "5 hours ago",
-                text: "Can anyone give you any tips for numbness in legs?",
-                commentsCount: 5,
-                stars: 14,
-                category: "Newest",
-              },
-              {
-                user: "user2508234892",
-                date: "10 days ago",
-                text: "How can I manage pet allergies?",
-                commentsCount: 11,
-                stars: 12,
-                category: "allergies",
-              },
-              {
-                user: "user1568234892",
-                date: "1 month ago",
-                text: "What triggers asthma symptoms?",
-                commentsCount: 15,
-                stars: 102,
-                category: "asthma",
-              },
-              {
-                user: "user1568234892",
-                date: "1 month ago",
-                text: "What triggers asthma symptoms?",
-                commentsCount: 15,
-                stars: 102,
-                category: "Liked",
-              },
-              {
-                user: "user1568234892",
-                date: "1 month ago",
-                text: "What should I do if I suspect I have an infectious disease?",
-                commentsCount: 5,
-                stars: 98,
-                category: "Liked",
-              },
-              {
-                user: "user5478234892",
-                date: "May 15",
-                text: "How often should I see my doctor for asthma?",
-                commentsCount: 7,
-                stars: 96,
-                category: "asthma",
-              },
-              {
-                user: "user5478234892",
-                date: "May 15",
-                text: "How often should I see my doctor for asthma?",
-                commentsCount: 7,
-                stars: 96,
-                category: "Liked",
-              },
-              {
-                user: "john",
-                date: "May 13",
-                text: "What are some common causes of headaches?",
-                commentsCount: 3,
-                stars: 20,
-                category: "general",
-              },
-              {
-                user: "sarah",
-                date: "May 01",
-                text: "How can I manage anxiety effectively",
-                commentsCount: 8,
-                stars: 56,
-                category: "general",
-              },
-              {
-                user: "sukithakumara",
-                date: "May 01",
-                text: "How much water should I drink daily?",
-                commentsCount: 8,
-                stars: 50,
-                category: "general",
-              },
-              {
-                user: "rajeevamal",
-                date: "May 01",
-                text: "How much water should I drink daily?",
-                commentsCount: 8,
-                stars: 42,
-                category: "general",
-              },
-              {
-                user: "sarah",
-                date: "May 01",
-                text: "How much water should I drink daily?",
-                commentsCount: 8,
-                stars: 42,
-                category: "Liked",
-              },
-              {
-                user: "david",
-                date: "April 30",
-                text: "What are some tips for improving sleep quality?",
-                commentsCount: 2,
-                stars: 11,
-                category: "general",
-              },
-              {
-                user: "linda",
-                date: "April 28",
-                text: "How can I manage stress effectively?",
-                commentsCount: 7,
-                stars: 33,
-                category: "general",
-              },
-              {
-                user: "james",
-                date: "Feb 12",
-                text: "What are the benefits of regular exercise?",
-                commentsCount: 0,
-                stars: 5,
-                category: "general",
-              },
-              {
-                user: "james",
-                date: "jan 15",
-                text: "What are the benefits of regular exercise?",
-                commentsCount: 4,
-                stars: 12,
-                category: "oldest",
-              },
-              {
-                user: "james",
-                date: "1 year ago",
-                text: "What are the common signs of depression?",
-                commentsCount: 4,
-                stars: 10,
-                category: "oldest",
-              },{
-                user: "ismath",
-                date: "2 years ago",
-                text: "How can I reduce my risk of developing heart disease?",
-                commentsCount: 4,
-                stars: 14,
-                category: "oldest",
-              },
-              {
-                user: "Farkhan335",
-                date: "3 years ago",
-                text: "What are the benefits of regular exercise?",
-                commentsCount: 6,
-                stars: 2,
-                category: "oldest",
-              },
-            ],
-          };
-        },
-        computed: {
-          filteredComments() {
-            if (this.filters.length === 0) {
-              return this.comments;
-            }
-            return this.comments.filter((comment) =>
-              this.filters.includes(comment.category)
-            );
-          },
-        },
-      });
+      <h3 style="color: rgb(2, 0, 90); font-weight: bold">
+        Join Our Community Today and Embrace a Healthier, Happier Life!
+      </h3>
+      <p>
+        Are you ready to take charge of your health and well-being? At
+        Medi-Care, we're dedicated to helping you achieve your health goals
+        through personalized care, expert advice, and a supportive community.
+        Whether you're looking to improve your fitness, manage a chronic
+        condition, or simply live a healthier life, we're here to guide you
+        every step of the way.
+      </p>
+      <h3>Our comprehensive health services include:</h3>
+      <ul>
+        <li>
+          <strong>Expert Consultations:</strong> Access to top healthcare
+          professionals who provide tailored advice and treatment plans.
+        </li>
+        <li>
+          <strong>Fitness Programs:</strong> Customized workout plans to suit
+          your lifestyle and fitness level.
+        </li>
+        <li>
+          <strong>Nutritional Guidance:</strong> Diet plans and healthy eating
+          tips from certified nutritionists.
+        </li>
+        <li>
+          <strong>Mental Wellness:</strong> Resources and support for stress
+          management, mindfulness, and mental health.
+        </li>
+        <li>
+          <strong>Community Support:</strong> Join our vibrant community to
+          share experiences, get support, and stay motivated.
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      combox.mount("#app");
-    </script>
-    <script src="script_1.js"></script>
-  </body>
+  <script>
+    const combox = Vue.createApp({
+      data() {
+        return {
+          filters: [],
+          comments: [
+            {
+              user: "Shehan67893090",
+              date: "2 mins ago",
+              text: "What are the risk factors for heart disease?",
+              commentsCount: 0,
+              stars: 3,
+              category: "Newest",
+            },
+            {
+              user: "Taukan67893090",
+              date: "5 mins ago",
+              text: "How can I manage anxiety effectively?",
+              commentsCount: 1,
+              stars: 5,
+              category: "Newest",
+            },
+            {
+              user: "Chandrapala6784",
+              date: "10 mins ago",
+              text: "What are the risk factors for heart disease?",
+              commentsCount: 1,
+              stars: 12,
+              category: "allergies",
+            },
+            {
+              user: "mohommad5563",
+              date: "5 hours ago",
+              text: "Can anyone give you any tips for numbness in legs?",
+              commentsCount: 5,
+              stars: 14,
+              category: "Newest",
+            },
+            {
+              user: "user2508234892",
+              date: "10 days ago",
+              text: "How can I manage pet allergies?",
+              commentsCount: 11,
+              stars: 12,
+              category: "allergies",
+            },
+            {
+              user: "user1568234892",
+              date: "1 month ago",
+              text: "What triggers asthma symptoms?",
+              commentsCount: 15,
+              stars: 102,
+              category: "asthma",
+            },
+            {
+              user: "user1568234892",
+              date: "1 month ago",
+              text: "What triggers asthma symptoms?",
+              commentsCount: 15,
+              stars: 102,
+              category: "Liked",
+            },
+            {
+              user: "user1568234892",
+              date: "1 month ago",
+              text: "What should I do if I suspect I have an infectious disease?",
+              commentsCount: 5,
+              stars: 98,
+              category: "Liked",
+            },
+            {
+              user: "user5478234892",
+              date: "May 15",
+              text: "How often should I see my doctor for asthma?",
+              commentsCount: 7,
+              stars: 96,
+              category: "asthma",
+            },
+            {
+              user: "user5478234892",
+              date: "May 15",
+              text: "How often should I see my doctor for asthma?",
+              commentsCount: 7,
+              stars: 96,
+              category: "Liked",
+            },
+            {
+              user: "john",
+              date: "May 13",
+              text: "What are some common causes of headaches?",
+              commentsCount: 3,
+              stars: 20,
+              category: "general",
+            },
+            {
+              user: "sarah",
+              date: "May 01",
+              text: "How can I manage anxiety effectively",
+              commentsCount: 8,
+              stars: 56,
+              category: "general",
+            },
+            {
+              user: "sukithakumara",
+              date: "May 01",
+              text: "How much water should I drink daily?",
+              commentsCount: 8,
+              stars: 50,
+              category: "general",
+            },
+            {
+              user: "rajeevamal",
+              date: "May 01",
+              text: "How much water should I drink daily?",
+              commentsCount: 8,
+              stars: 42,
+              category: "general",
+            },
+            {
+              user: "sarah",
+              date: "May 01",
+              text: "How much water should I drink daily?",
+              commentsCount: 8,
+              stars: 42,
+              category: "Liked",
+            },
+            {
+              user: "david",
+              date: "April 30",
+              text: "What are some tips for improving sleep quality?",
+              commentsCount: 2,
+              stars: 11,
+              category: "general",
+            },
+            {
+              user: "linda",
+              date: "April 28",
+              text: "How can I manage stress effectively?",
+              commentsCount: 7,
+              stars: 33,
+              category: "general",
+            },
+            {
+              user: "james",
+              date: "Feb 12",
+              text: "What are the benefits of regular exercise?",
+              commentsCount: 0,
+              stars: 5,
+              category: "general",
+            },
+            {
+              user: "james",
+              date: "jan 15",
+              text: "What are the benefits of regular exercise?",
+              commentsCount: 4,
+              stars: 12,
+              category: "oldest",
+            },
+            {
+              user: "james",
+              date: "1 year ago",
+              text: "What are the common signs of depression?",
+              commentsCount: 4,
+              stars: 10,
+              category: "oldest",
+            }, {
+              user: "ismath",
+              date: "2 years ago",
+              text: "How can I reduce my risk of developing heart disease?",
+              commentsCount: 4,
+              stars: 14,
+              category: "oldest",
+            },
+            {
+              user: "Farkhan335",
+              date: "3 years ago",
+              text: "What are the benefits of regular exercise?",
+              commentsCount: 6,
+              stars: 2,
+              category: "oldest",
+            },
+          ],
+        };
+      },
+      computed: {
+        filteredComments() {
+          if (this.filters.length === 0) {
+            return this.comments;
+          }
+          return this.comments.filter((comment) =>
+            this.filters.includes(comment.category)
+          );
+        },
+      },
+    });
+
+    combox.mount("#app");
+  </script>
+  <script src="script_1.js"></script>
+</body>
+
 </html>
