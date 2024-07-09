@@ -1,7 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
-            query: '',
+            inputQuery: '',
+            displayedQuery: '',
             advice: '',
             user: 'user 12034565'
         };
@@ -11,21 +12,11 @@ const app = Vue.createApp({
             // Implement go back functionality
             console.log('Go Back');
         },
-        async getAdvice() {
-            try {
-                const response = await fetch('http://localhost:5000/search', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ query: this.query })
-                });
-                const data = await response.json();
-                this.advice = data.answer;
-            } catch (error) {
-                console.error('Error:', error);
-                this.advice = 'Sorry, something went wrong. Please try again later.';
-            }
+        getAdvice() {
+            this.displayedQuery = this.inputQuery;
+            // Implement the logic to get advice based on the query
+            // For example:
+            this.advice = 'Here is some advice based on your query: ' + this.displayedQuery;
         }
     }
 });
