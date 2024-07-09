@@ -71,42 +71,9 @@
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #fffd9b;">
-        <div class="container-fluid">
-            <a class="navbar-brand me-auto" id="navbar-brandme-auto" href="#">
-                <img id="Logo" src="images/Logo.png" alt="Logo">
-            </a>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Medi Care</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3" id="bar">
-
-                        <li class="nav-item" v-for="link in navLinks" :key="link.text">
-                            <a id="nav-link" class="nav-link mx-lg-2" :href="link.href">{{ link.text }}</a>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-
-            <div class="login">
-                <a href="login.html" class="signup-button">Sign in</a>
-                <a href="login.html" class="login-button">Login</a>
-            </div>
-
-            <button class="navbar-toggler pe-0" id="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-        </div>
-    </nav>
+    <div id="nav-bar">
+        <nav-bar></nav-bar>
+    </div>
 
     <!-- End Navbar -->
 
