@@ -3,6 +3,7 @@ new Vue({
     data: {
         results: [
             {
+<<<<<<< Updated upstream
                 id: 1,
                 user: 'user 12368442',
                 posted: 'posted 10 mins ago',
@@ -17,10 +18,18 @@ new Vue({
                 posted: 'posted 10 mins ago',
                 content: 'How can I manage pet allergies.....??',
                 stars: 14,
+=======
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+>>>>>>> Stashed changes
                 comments: 'No comments yet',
                 tags: '@allergies'
             },
             {
+<<<<<<< Updated upstream
                 id: 3,
                 user: 'user 12368442',
                 posted: 'posted 10 mins ago',
@@ -40,6 +49,70 @@ new Vue({
 
 
             }
+=======
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+                comments: 'No comments yet',
+                tags: '@allergies'
+            },
+            {
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+                comments: 'No comments yet',
+                tags: '@allergies'
+            },
+            {
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+                comments: 'No comments yet',
+                tags: '@allergies'
+            },
+            {
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+                comments: 'No comments yet',
+                tags: '@allergies'
+            },
+            {
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+                comments: 'No comments yet',
+                tags: '@allergies'
+            },
+            {
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+                comments: 'No comments yet',
+                tags: '@allergies'
+            },
+            {
+                id: 2,
+                user: 'user 128442',
+                posted: 'posted 5 mins ago',
+                content: 'How can I manage pet allergies.....??',
+                stars: 16,
+                comments: 'No comments yet',
+                tags: '@allergies'
+            },
+>>>>>>> Stashed changes
         ]
     }
 });
