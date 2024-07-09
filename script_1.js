@@ -56,7 +56,7 @@ app.component('nav-bar', {
 });
 
 // Mount the app instance to #app element
-app.mount('body');
+app.mount('#nav-bar');
 
 
 const tag = Vue.createApp({
