@@ -6,11 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="background.css">
-<<<<<<< Updated upstream
-=======
     <Link rel="stylesheet" href="resultscommunity.css">
 
->>>>>>> Stashed changes
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Community Results</title>
 </head>
@@ -22,12 +19,8 @@
             <div class="search-bar">
                 <div class="search-input-container">
                     <img src="search icon.png" alt="Search Icon" class="search-icon">
-<<<<<<< Updated upstream
-                    <input type="text" placeholder="I have a history of allergies and asthma. I need advice on managing my symptoms...">
-=======
                     <input type="text"
                         placeholder="I have a history of allergies and asthma. I need advice on managing my symptoms...">
->>>>>>> Stashed changes
                     <div class="loading-icon"><i class="fas fa-spinner"></i></div>
                 </div>
             </div>
@@ -35,8 +28,6 @@
 
         <div class="search-results" v-if="results.length">
             <h2>Search Results</h2>
-<<<<<<< Updated upstream
-=======
             
 
             <div class="results-container">
@@ -56,7 +47,6 @@
                     </div>
                 </div>
             </div>
->>>>>>> Stashed changes
             <div class="result" v-for="result in results" :key="result.id">
                 <div class="result-header">
                     <span class="user">{{ result.user }}</span>
@@ -76,11 +66,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="main.js"></script>
-<<<<<<< Updated upstream
-</body>
-
-</html>
-=======
     <script>
         function toggleDropdown() {
             document.querySelector('.dropdown-content').classList.toggle('show');
@@ -100,4 +85,3 @@
 </body>
 
 </html>
->>>>>>> Stashed changes
