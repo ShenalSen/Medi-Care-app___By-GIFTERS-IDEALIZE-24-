@@ -58,6 +58,70 @@ app.component('nav-bar', {
 // Mount the app instance to #app element
 app.mount('#nav-bar');
 
+// ---------------------------------------------------------------------------
+
+const footer = Vue.createApp({
+    data() {
+        return {
+            footerLinks: [
+                { text: 'Home', href: 'index.html' },
+                { text: 'About', href: 'about.html' },
+                { text: 'Services', href: 'services.html' },
+                { text: 'Contact', href: 'contact.html' },
+                { text: 'Login', href: 'login.html' }
+            ]
+        };
+    }
+});
+
+// Define the footer component
+footer.component('footer-bar', {
+    template: `    <footer style="margin-top: 160px;">
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">our Team</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy;2024; Designed by <span class="designer">Shenal Senarathne®️</span></p>
+        </div>
+    </footer>`
+})
+
+footer.mount('#footer-bar');
+
+// ---------------------------------------------------------------------------
+
+// creating the HeadMsg  mounting it to the #head-msg element
+const headMsg = Vue.createApp({
+    data() {
+        return {
+            showFirst: true
+        };
+    },
+    methods: {
+        togleHeadMsg() {
+            this.showFirst = !this.showFirst;
+        }
+    }
+});
+
+headMsg.mount('#head-msg');
+
 
 const tag = Vue.createApp({
     data() {
