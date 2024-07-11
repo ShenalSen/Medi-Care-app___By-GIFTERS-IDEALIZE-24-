@@ -1,0 +1,200 @@
+.result {
+  background: linear-gradient(to right, #bdfffe, #206389);
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 90px;
+}
+.result-text {
+  max-width: 70%;
+}
+.result-actions {
+  display: flex;
+  align-items: center;
+  margin-top: -33px;
+  margin-left: 670px;
+}
+.star,
+.comment {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.star img,
+.comment img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.star span,
+.comment span {
+  font-size: 14px;
+}
+.container-main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: none;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #333;
+}
+.result-text .text {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+.filters {
+  display: flex;
+
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
+  height: 10px;
+  align-items: center;
+}
+.filters select,
+.filters button {
+  padding: 6px;
+  font-size: 9.5px;
+  color: #dddddd;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#tagline {
+  margin-left: 690px;
+  font-size: 13.3px;
+  font-weight: 400;
+  color: #e7e6e6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#usercomponent {
+  background-color: #3d3c3c;
+  padding: 3px;
+  padding-left: 11px;
+  padding-right: 11px;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  font-weight: 400;
+  border-radius: 117px;
+  color: rgb(216, 216, 216);
+}
+
+.rightfilset {
+  margin-left: 550px;
+}
+
+.search-input-container .loading-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-input-container .loading-icon i {
+  font-size: 20px;
+  color: #25719c;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.result-medi {
+  background: linear-gradient(to right, #68ffa2, #35b5ff);
+  border-radius: 25px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 60px;
+}
+
+.continens {
+  max-width: 800px;
+}
+.componentia {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #68ffa2, #35b5ff);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.iconus, .actio, .recensiones {
+  display: flex;
+  align-items: center;
+}
+.iconus {
+  flex: 1;
+  justify-content: center;
+  font-size: 40px;
+  color: #000;
+}
+.textus {
+  flex: 4;
+  flex-direction: column;
+  margin-left: 10px;
+  color: #000;
+}
+.textus .titulus {
+  font-weight: bold;
+  font-size: 18px;
+}
+.textus .subtitulus {
+  font-size: 14px;
+  color: #333;
+}
+.actio {
+  flex: 2;
+  justify-content: center;
+}
+.actio .button {
+  background-color: #ffdd57;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.actio .button i {
+  margin-right: 5px;
+}
+.recensiones {
+  flex: 2;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: #333;
+}
+.recensiones i {
+  color: #ffdd57;
+  margin-right: 5px;
+}

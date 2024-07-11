@@ -9,61 +9,31 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- production -->
+    <!-- <script src="https://unpkg.com/vue@3.2.20/dist/vue.global.prod.js"></script> -->
+    <!-- development -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Medi Care 🩺</title>
 </head>
 
-<body class="body-back">
+<body class="bg-white">
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand me-auto" id="navbar-brandme-auto" href="#">
-                <img id="Logo" src="images/Logo.png" alt="Logo">
-            </a>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Medi Care</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3" id="bar">
-
-                        <li class="nav-item" v-for="link in navLinks" :key="link.text">
-                            <a id="nav-link" class="nav-link mx-lg-2" :href="link.href">{{ link.text }}</a>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-            
-            <div class="login">
-                <a href="login.html" class="signup-button">Sign in</a>
-                <a href="login.html" class="login-button">Login</a>
-            </div>
-
-            <button class="navbar-toggler pe-0" id="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-        </div>
-    </nav>
-
+    <div id="nav-bar">
+        <nav-bar></nav-bar>
+    </div>
     <!-- End Navbar -->
 
     <!-- Hero Section -->
-
+    <br><br><br><br><br>
     <section>
-
+        <br>
         <div id="message">
             <h1>
                 <span id="message1">{{message1}}</span><br>
@@ -72,23 +42,29 @@
         </div>
 
 
-        <div id="searchbar">
-            <div class="group">
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
-                    <g>
-                        <path
-                            d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                        </path>
-                    </g>
-                </svg>
-
-                <input id="query" class="input" type="search" placeholder="Enter your symptoms here...."
-                    name="searchbar" />
+        <div>
+            <div class="containersss">
+                <div class="search-container">
+                    <input class="input" type="text" style="color: rgb(39, 39, 39);"
+                        placeholder="Enter your symptoms here...">
+                    <svg viewBox="0 0 24 24" class="search__icon">
+                        <a href="search-results-page.html">
+                            <g style="cursor: pointer;">
+                                <a href="search-results-page.html">
+                                    <path
+                                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                                    </path>
+                                </a>
+                            </g>
+                        </a>
+                    </svg>
+                </div>
             </div>
+
         </div>
 
         <div id="doctor">
-            <img src="images/Doctor.png" alt="Female Doctor">
+            <img src="images/Doctor.png" alt="Female Doctor" class="shadow-blue-600 drop-shadow-2xl">
         </div>
 
         <div id="prompt">
@@ -96,7 +72,7 @@
         </div>
 
         <a href="quiz.html" style="text-decoration: none;">
-            <button class="button">
+            <button class="button bg-slate-400 transition ease-in-out duration-300">
                 Take Quiz
                 <div class="hoverEffect">
                     <div>
@@ -105,6 +81,168 @@
             </button>
         </a>
 
+        <!-- main senction -->
+        <!-- welcome  -->
+        <section
+            style="margin-top: 155px; background-color: rgb(129, 129, 129); padding-top: 10px; padding-bottom: 10px; margin-bottom: -23px;">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <div
+                            class="lg:m-4 lg:p-4 border border-white rounded-md transition duration-500 ease-in-out transform">
+                            <h1 class="text-left text-4xl font-bold text-white">Welcome to Medi Care</h1>
+                            <h2 class="text-left text-2xl font-light text-opacity-70">Empowering Your Health Journey
+                            </h2>
+                            <p class="text-left text-xl text-yellow-100">Welcome to Medi Care, your trusted companion in
+                                navigating the world of health and wellness. We understand the challenges you face in
+                                finding reliable medical information and accessing timely care. That's why we've created
+                                a
+                                platform designed to empower you with knowledge, support, and tools for proactive health
+                                management.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div
+                            class="lg:m-4 lg:p-4 border border-white rounded-md transition duration-500 ease-in-out transform">
+                            <h1 class="text-left text-4xl font-bold text-white">Join Our Community</h1>
+                            <!-- <h2 class="text-left text-2xl font-light text-opacity-70">Empowering Your Health Journey</h2> -->
+                            <p class="text-left text-xl text-yellow-100">At Medi Care, we believe in the power of
+                                community.
+                                Join thousands of users who share their health journeys, offer support, and connect with
+                                others
+                                facing similar challenges. Whether you're managing a chronic condition or seeking advice
+                                on
+                                everyday wellness, our platform is here to support you every step of the way.</p>
+                            <div class="flex text-left space-x-6 text-white font-bold">
+                                <button
+                                    class="p-2 mt-2 border border-white transition ease-in-out hover:bg-slate-100 hover:text-black rounded-lg"><a
+                                        href="login.html">Join Now</a></button>
+                                <button
+                                    class="p-2 mt-2 border border-white transition ease-in-out hover:bg-slate-100 hover:text-black rounded-lg"><a
+                                        href="community.html">Explore</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div
+                            class="lg:m-4 lg:p-4 border border-white rounded-md transition duration-500 ease-in-out transform">
+                            <h1 class="text-left text-4xl font-bold text-white">Welcome to Medi Care</h1>
+                            <h2 class="text-left text-2xl font-light text-opacity-70">Empowering Your Health Journey
+                            </h2>
+                            <p class="text-left text-xl text-yellow-100">Welcome to Medi Care, your trusted companion in
+                                navigating the world of health and wellness. We understand the challenges you face in
+                                finding reliable medical information and accessing timely care. That's why we've created
+                                a
+                                platform designed to empower you with knowledge, support, and tools for proactive health
+                                management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <!-- key features section -->
+
+        <section
+            style="background-color: rgb(205, 205, 205); padding-top: 30px; padding-bottom: 100px; margin-bottom: -158px;">
+            <div class="grid place-content-center mt-4">
+                <div class="flex justify-center items-center border-black rounded-full w-40 h-40 p-0 shadow-xl shadow-indigo-600 transition ease-in-out hover:shadow-indigo-400 duration-200"
+                    style="background-color: aliceblue;">
+                    <img src="images/key-features.png" alt="health" class="w-1/2 h-1/2">
+                </div>
+            </div>
+            <div>
+                <h1 class="text-center text-4xl font-bold text-slate-400 mt-4" style="color:rgb(255, 255, 255);">Our
+                    Services</h1>
+                <div class="flex mt-10 p-0">
+                    <div class="grow font-bold w-1/2 ">
+                        <!-- first feature -->
+                        <div
+                            class="flex items-center space-x-10 justify-center rounded-full p-2 m-4 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                            <img src="images/advice.png" alt="advice image" class="w-1/12 h-1/12">
+                            <h1>Instant Symptom-Based Advice</h1>
+                        </div>
+                        <!-- second feature  -->
+                        <div
+                            class="flex items-center space-x-10 justify-center rounded-full p-2 mt-11 ml-6 mr-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                            <img src="images/handshake.png" alt="advice image" class="w-1/12 h-1/12">
+                            <h1>Engaging Community Support</h1>
+                        </div>
+                        <!-- third feature -->
+                        <div
+                            class="flex items-center space-x-10 justify-center rounded-full p-2 mt-12 ml-6 mr-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                            <img src="images/magnifier.png" alt="advice image" class="w-1/12 h-1/12">
+                            <h1>Nearby Treatment Centers Locator</h1>
+                        </div>
+                        <!-- fourth feature -->
+                        <div
+                            class="flex items-center space-x-10 justify-center rounded-full p-2 mt-12 mr-6 ml-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                            <img src="images/first-aid-kit.png" alt="advice image" class="w-1/12 h-1/12">
+                            <h1>Clear and Comprehensive Health Articles</h1>
+                        </div>
+                    </div>
+                    <div class="flex flex-col grow-0 w-10 justify-around">
+                        <div class="grow-0 w-10 h-1 bg-blue-800">
+
+                        </div>
+                        <div class="grow-0 w-10 h-1 bg-blue-800">
+
+                        </div>
+                        <div class="grow-0 w-10 h-1 bg-blue-800">
+
+                        </div>
+                        <div class="grow-0 w-10 h-1 bg-blue-800">
+
+                        </div>
+                    </div>
+                    <div class="grow-0 w-1 h-auto bg-black ">
+
+                    </div>
+                    <div class="flex flex-col grow-0 w-10 justify-around mt-16">
+                        <div class="grow-0 w-10 h-1 bg-pink-600">
+
+                        </div>
+                        <div class="grow-0 w-10 h-1 bg-pink-600">
+
+                        </div>
+                        <div class="grow-0 w-10 h-1 bg-pink-600">
+
+                        </div>
+                        <div class="grow-0 w-10 h-1 bg-pink-600">
+
+                        </div>
+                    </div>
+                    <div class="grow-0 w-1/2 relative mt-6">
+                        <!-- first feature details  -->
+                        <div
+                            class="flex items-center justify-center p-3 m-4 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-0">
+                            <h1 class="text-xl text-center">Receive immediate, personalized guidance on your symptoms
+                                through our intuitive search feature.</h1>
+                        </div>
+                        <!-- second frature details -->
+                        <div
+                            class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-24">
+                            <h1 class="text-xl text-center">Connect with a vibrant community of members and healthcare
+                                experts. Share your experiences, ask questions, and find the support you need on your
+                                health journey.</h1>
+                        </div>
+                        <!-- third feature details -->
+                        <div
+                            class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-56">
+                            <h1 class="text-xl text-center">Quickly locate and access nearby treatment centers for
+                                prompt and professional medical care.</h1>
+                        </div>
+                        <!-- fourth feature details -->
+                        <div
+                            class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-3/4">
+                            <h1 class="text-xl text-center">Explore a vast library of articles on common health issues,
+                                written in clear, jargon-free language for easy understanding.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
@@ -112,36 +250,10 @@
 
     <!-- End Hero Section -->
 
-    <section id="footer">
-        
-    </section>
-
-    <footer style="margin-top: 160px;">
-        <div class="footerContainer">
-            <div class="socialIcons">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-google-plus"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-            </div>
-            <div class="footerNav">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="">our Team</a></li>
-                </ul>
-            </div>
-
-        </div>
-        <div class="footerBottom">
-            <p>Copyright &copy;2024; Designed by <span class="designer">Shenal Senarathne®️</span></p>
-        </div>
-    </footer>
-
-
+    <!-- footer component -->
+    <div id="footer-bar">
+        <footer-bar></footer-bar>
+    </div>
 
 
 
@@ -149,6 +261,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <style>
+        .fade-slide-enter-active,
+        .fade-slide-leave-active {
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .fade-slide-enter,
+        .fade-slide-leave-to {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+    </style>
 
 </body>
 

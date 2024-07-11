@@ -18,47 +18,13 @@
     <title>Contact</title>
 </head>
 
-<body style="padding-top: 150px;">
+<body style="padding-top: 150px; background-color: rgb(192, 192, 192);">
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand me-auto" id="navbar-brandme-auto" href="#">
-                <img id="Logo" src="images/Logo.png" alt="Logo">
-            </a>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Medi Care</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3" id="bar">
-
-                        <li class="nav-item" v-for="link in navLinks" :key="link.text">
-                            <a id="nav-link" class="nav-link mx-lg-2" :href="link.href">{{ link.text }}</a>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-
-            <div class="login">
-                <a href="login.html" class="signup-button">Sign in</a>
-                <a href="login.html" class="login-button">Login</a>
-            </div>
-
-            <button class="navbar-toggler pe-0" id="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-        </div>
-    </nav>
-
+    <div id="nav-bar">
+        <nav-bar></nav-bar>
+    </div>
     <main>
         <!-- Wellcomming title -->
         <div class="container sm:mt-4 sm:pt-4 mt-8 pt-8 m-2">
@@ -72,8 +38,8 @@
             </p>
         </div>
         <!-- Details -->
-        <div class="flex lg:flex-row md:flex-row flex-col m-8 p-2 space">
-            <div class="lg:flex-1 md:flex-1 p-2 m-2 border-2">
+        <div class="flex lg:flex-row md:flex-row flex-col m-6 p-2">
+            <div class="lg:flex-1 md:flex-1 p-2 m-2 border-2" style="border-radius: 9px;border-color: rgb(53, 53, 53);">
                 <div class="grid">
                     <h2 class="text-left font-bold lg:text-2xl md:text-xl hover:text-left lg:m-4 md:m-4 m-2">Sales</h2>
                     <br>
@@ -82,7 +48,7 @@
                     </p>
                     <br><br>
                     <button
-                        class="border-2 border-blue-700 transition ease-in-out hover:bg-blue-700 hover:text-white duration-300">
+                        class="border-2  transition ease-in-out hover:bg-blue-700 hover:text-white duration-300" style="border-radius: 9px; border-color: aliceblue;">
                         <a href="tel:+94-76-970-4781">
                             <p class="text-center font-bold lg:text-lg md:text-md text-sm lg:m-4 md:m-4 m-2">
                                 Call us
@@ -92,7 +58,7 @@
                     </button>
                 </div>
             </div>
-            <div class="lg:flex-1 md:flex-1 p-2 m-2 border-2">
+            <div class="lg:flex-1 md:flex-1 p-2 m-2 border-2" style="border-radius: 9px;border-color: rgb(53, 53, 53);">
                 <div class="grid">
                     <h2 class="text-left font-bold lg:text-2xl md:text-xl hover:text-left lg:m-4 md:m-4 m-2">Support
                     </h2>
@@ -105,7 +71,7 @@
                     </h3>
                     <br>
                     <button
-                        class="border-2 border-blue-700 transition ease-in-out hover:bg-blue-700 hover:text-white duration-300">
+                        class="border-2 border-blue-700 transition ease-in-out hover:bg-blue-700 hover:text-white duration-300" style="border-radius: 9px; border-color: aliceblue;">
                         <a href="tel:+94-76-970-4781">
                             <p class="text-center font-bold lg:text-lg md:text-md text-sm lg:m-4 md:m-4 m-2">
                                 Get Help
@@ -115,7 +81,7 @@
                     </button>
                 </div>
             </div>
-            <div class="lg:flex-1 md:flex-1 p-2 m-2 border-2">
+            <div class="lg:flex-1 md:flex-1 p-2 m-2 border-2" style="border-radius: 9px; border-color: rgb(53, 53, 53);">
                 <div class="grid">
                     <h2 class="text-left font-bold lg:text-2xl md:text-xl hover:text-left lg:m-4 md:m-4 m-2">See Q&A
                     </h2>
@@ -128,7 +94,7 @@
                     <br>
                     <br>
                     <button
-                        class="border-2 border-blue-700 transition ease-in-out hover:bg-blue-700 hover:text-white duration-300">
+                        class="border-2 border-blue-700 transition ease-in-out hover:bg-blue-700 hover:text-white duration-300" style="border-radius: 9px; border-color: aliceblue;">
                         <a href="tel:+94-76-970-4781">
                             <p class="text-center font-bold lg:text-lg md:text-md text-sm lg:m-4 md:m-4 m-2">
                                 Q & A
@@ -170,7 +136,7 @@ max-width: fit-screen;">
 
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy;2024; Designed by <span class="designer">Shenal Senarathne®️</span></p>
+            <p>Copyright &copy;2024; Designed by <span class="designer">GIFTERS®️</span></p>
         </div>
         <!-- link javascript file -->
         <script src="script_1.js"></script>
