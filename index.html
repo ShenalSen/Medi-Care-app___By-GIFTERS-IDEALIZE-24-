@@ -33,101 +33,109 @@
     <!-- Hero Section -->
     <br><br><br><br><br>
     <section>
-        <br>
-        <div id="message">
-            <h1>
-                <span id="message1">{{message1}}</span><br>
-                <span id="message2">{{message2}}</span>
-            </h1>
-        </div>
-
-
-        <div id="searchbar">
-            <div class="group">
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
-                    <g>
-                        <path
-                            d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                        </path>
-                    </g>
-                </svg>
-
-                <input id="query" class="input" type="search" placeholder="Enter your symptoms here...."
-                    name="searchbar" />
+        <div class="bg-scroll p-10" style="background-image: url(images/covid19.jpg)">
+            <br>
+            <div id="message">
+                <h1>
+                    <span id="message1">{{message1}}</span><br>
+                    <span id="message2">{{message2}}</span>
+                </h1>
             </div>
-        </div>
 
-        <div id="doctor">
-            <img src="images/Doctor.png" alt="Female Doctor" class="shadow-blue-600 drop-shadow-2xl">
-        </div>
 
-        <div id="prompt">
-            <h2 id="prompt">{{prompte}}</h2>
-        </div>
+            <div id="searchbar">
+                <div class="group">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+                        <g>
+                            <path
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                            </path>
+                        </g>
+                    </svg>
 
-        <a href="quiz.html" style="text-decoration: none;">
-            <button class="button bg-slate-400 transition ease-in-out duration-300">
-                Take Quiz
-                <div class="hoverEffect">
-                    <div>
-                    </div>
+                    <input id="query" class="input" type="search" placeholder="Enter your symptoms here...."
+                        name="searchbar" />
                 </div>
-            </button>
-        </a>
+            </div>
+
+            <div id="doctor">
+                <img src="images/doctor.png" alt="Female Doctor" class="shadow-blue-600 drop-shadow-2xl">
+            </div>
+
+            <div id="prompt">
+                <h2 id="prompt">{{prompte}}</h2>
+            </div>
+
+            <a href="quiz.html" style="text-decoration: none;">
+                <button class="button bg-slate-400 transition ease-in-out duration-300">
+                    Take Quiz
+                    <div class="hoverEffect">
+                        <div>
+                        </div>
+                    </div>
+                </button>
+            </a>
+        </div>
+    </section>
 
     <!-- main senction -->
     <!-- welcome  -->
     <section>
         <br><br><br><br>
         <div id="head-msg"
-            class="flex items-center space-x-24 bg-gradient-to-r from-slate-400 to-slate-700 lg:mt-28 lg:m-2 rounded-lg drop-shadow-md transition ease-in-out hover:drop-shadow-2xl duration-200">
-            <!-- this is the div that I am going to togle over a button -->
-            <div>
-                <!-- fitst msg -->
-                <transition name="fade-slide">
-                    <div v-if="showFirst"
+            class="flex items-center space-x-24 bg-gradient-to-r from-slate-400 to-slate-700 lg:mt-28 lg:m-2 rounded-lg drop-shadow-md transition ease-in-out hover:drop-shadow-2xl duration-200"
+            @mouseover="pauseSlider" @mouseleave="startSlider">
+            <!-- this is the div that I am going to toggle over a button -->
+            <div class="slides">
+                <!-- Use transition component to wrap the content -->
+                <transition name="fade" mode="out-in">
+                    <!-- first msg -->
+                    <div v-if="showFirst" key="first"
                         class="lg:m-4 lg:p-4 border border-white rounded-md transition duration-500 ease-in-out transform">
                         <h1 class="text-left text-4xl font-bold text-white">Welcome to Medi Care</h1>
-                        <h2 class="text-left text-2xl font-light text-opacity-70">Empowering Your Health Journey</h2>
+                        <h2 class="text-left text-2xl font-light text-opacity-70">Empowering Your Health Journey
+                        </h2>
                         <p class="text-left text-xl text-yellow-100">Welcome to Medi Care, your trusted companion in
                             navigating the world of health and wellness. We understand the challenges you face in
-                            finding reliable medical information and accessing timely care. That's why we've created a
+                            finding reliable medical information and accessing timely care. That's why we've created
+                            a
                             platform designed to empower you with knowledge, support, and tools for proactive health
                             management.</p>
                     </div>
-                </transition>
-                <!-- second msg -->
-                <transition name="fade-slide">
-                    <div v-if="!showFirst"
+                    <!-- second msg -->
+                    <div v-if="!showFirst" key="second"
                         class="lg:m-4 lg:p-4 border border-white rounded-md transition duration-500 ease-in-out transform">
                         <h1 class="text-left text-4xl font-bold text-white">Join Our Community</h1>
-                        <!-- <h2 class="text-left text-2xl font-light text-opacity-70">Empowering Your Health Journey</h2> -->
-                        <p class="text-left text-xl text-yellow-100">At Medi Care, we believe in the power of community.
+                        <p class="text-left text-xl text-yellow-100">At Medi Care, we believe in the power of
+                            community.
                             Join thousands of users who share their health journeys, offer support, and connect with
-                            others
-                            facing similar challenges. Whether you're managing a chronic condition or seeking advice on
+                            others facing similar challenges. Whether you're managing a chronic condition or seeking
+                            advice on
                             everyday wellness, our platform is here to support you every step of the way.</p>
                         <div class="flex text-left space-x-6 text-white font-bold">
-                            <button class="p-2 mt-2 border border-white transition ease-in-out hover:bg-slate-100 hover:text-black rounded-lg"><a href="login.html">Join Now</a></button>
-                            <button class="p-2 mt-2 border border-white transition ease-in-out hover:bg-slate-100 hover:text-black rounded-lg"><a href="community.html">Explore</a></button>
+                            <button
+                                class="p-2 mt-2 border border-white transition ease-in-out hover:bg-slate-100 hover:text-black rounded-lg">
+                                <a href="login.html">Join Now</a>
+                            </button>
+                            <button
+                                class="p-2 mt-2 border border-white transition ease-in-out hover:bg-slate-100 hover:text-black rounded-lg">
+                                <a href="community.html">Explore</a>
+                            </button>
                         </div>
                     </div>
                 </transition>
             </div>
-            <!-- togle button to change the above div -->
-            <div class="flex-1 items-center lg:m-4 lg:p-4">
-                <button
-                    class="p-4 rounded-full border border-white text-white text-center font-bold text-8xl transition ease-in-out hover:bg-slate-400 duration-300"
-                    @click="togleHeadMsg">⏭></button>
-            </div>
         </div>
     </section>
-    <br><hr>
+
+    <br>
+    <hr>
     <!-- key features section -->
 
     <section>
         <div class="grid place-content-center mt-4">
-            <div class="flex justify-center items-center bg-white border border-black rounded-full w-40 h-40 p-0 shadow-xl shadow-indigo-600 transition ease-in-out hover:shadow-indigo-400 duration-200">
+            <div
+                class="flex justify-center items-center bg-white border border-black rounded-full w-40 h-40 p-0 shadow-xl shadow-indigo-600 transition ease-in-out hover:shadow-indigo-400 duration-200">
                 <img src="images/key-features.png" alt="health" class="w-1/2 h-1/2">
             </div>
         </div>
@@ -136,22 +144,26 @@
             <div class="flex mt-10 p-0">
                 <div class="grow font-bold w-1/2 ">
                     <!-- first feature -->
-                    <div class="flex items-center space-x-10 justify-center rounded-full p-2 m-4 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                    <div
+                        class="flex items-center space-x-10 justify-center rounded-full p-2 m-4 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
                         <img src="images/advice.png" alt="advice image" class="w-1/12 h-1/12">
                         <h1>Instant Symptom-Based Advice</h1>
                     </div>
                     <!-- second feature  -->
-                    <div class="flex items-center space-x-10 justify-center rounded-full p-2 mt-11 ml-6 mr-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                    <div
+                        class="flex items-center space-x-10 justify-center rounded-full p-2 mt-11 ml-6 mr-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
                         <img src="images/handshake.png" alt="advice image" class="w-1/12 h-1/12">
                         <h1>Engaging Community Support</h1>
                     </div>
                     <!-- third feature -->
-                    <div class="flex items-center space-x-10 justify-center rounded-full p-2 mt-12 ml-6 mr-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                    <div
+                        class="flex items-center space-x-10 justify-center rounded-full p-2 mt-12 ml-6 mr-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
                         <img src="images/magnifier.png" alt="advice image" class="w-1/12 h-1/12">
                         <h1>Nearby Treatment Centers Locator</h1>
                     </div>
                     <!-- fourth feature -->
-                    <div class="flex items-center space-x-10 justify-center rounded-full p-2 mt-12 mr-6 ml-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
+                    <div
+                        class="flex items-center space-x-10 justify-center rounded-full p-2 mt-12 mr-6 ml-6 mb-6 bg-gradient-to-tr from-purple-500 to-red-300 hover:from-red-300 hover:to-purple-500 text-white drop-shadow-xl">
                         <img src="images/first-aid-kit.png" alt="advice image" class="w-1/12 h-1/12">
                         <h1>Clear and Comprehensive Health Articles</h1>
                     </div>
@@ -171,7 +183,7 @@
                     </div>
                 </div>
                 <div class="grow-0 w-1 h-auto bg-black ">
-                    
+
                 </div>
                 <div class="flex flex-col grow-0 w-10 justify-around mt-16">
                     <div class="grow-0 w-10 h-1 bg-pink-600">
@@ -189,28 +201,33 @@
                 </div>
                 <div class="grow-0 w-1/2 relative mt-6">
                     <!-- first feature details  -->
-                    <div class="flex items-center justify-center p-3 m-4 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-0">
-                        <h1 class="text-xl text-center">Receive immediate, personalized guidance on your symptoms through our intuitive search feature.</h1>
+                    <div
+                        class="flex items-center justify-center p-3 m-4 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-0">
+                        <h1 class="text-xl text-center">Receive immediate, personalized guidance on your symptoms
+                            through our intuitive search feature.</h1>
                     </div>
                     <!-- second frature details -->
-                    <div class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-24">
-                        <h1 class="text-xl text-center">Connect with a vibrant community of members and healthcare experts. Share your experiences, ask questions, and find the support you need on your health journey.</h1>
+                    <div
+                        class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-24">
+                        <h1 class="text-xl text-center">Connect with a vibrant community of members and healthcare
+                            experts. Share your experiences, ask questions, and find the support you need on your
+                            health journey.</h1>
                     </div>
                     <!-- third feature details -->
-                    <div class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-56">
-                        <h1 class="text-xl text-center">Quickly locate and access nearby treatment centers for prompt and professional medical care.</h1>
+                    <div
+                        class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-56">
+                        <h1 class="text-xl text-center">Quickly locate and access nearby treatment centers for
+                            prompt and professional medical care.</h1>
                     </div>
                     <!-- fourth feature details -->
-                    <div class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-3/4">
-                        <h1 class="text-xl text-center">Explore a vast library of articles on common health issues, written in clear, jargon-free language for easy understanding.</h1>
+                    <div
+                        class="flex items-center justify-center p-3 m-6 bg-gradient-to-r from-sky-400 to-blue-700 text-white rounded-full drop-shadow-lg absolute top-3/4">
+                        <h1 class="text-xl text-center">Explore a vast library of articles on common health issues,
+                            written in clear, jargon-free language for easy understanding.</h1>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-
-
     </section>
 
     <!-- End Hero Section -->
@@ -228,15 +245,18 @@
         crossorigin="anonymous"></script>
 
     <style>
-        .fade-slide-enter-active,
-        .fade-slide-leave-active {
-            transition: opacity 0.5s, transform 0.5s;
+        /* Fade transition */
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 0.5s ease-in-out;
         }
 
-        .fade-slide-enter,
-        .fade-slide-leave-to {
+        .fade-enter,
+        .fade-leave-to
+
+        /* .fade-leave-active in <2.1.8 */
+            {
             opacity: 0;
-            transform: translateX(100px);
         }
     </style>
 
