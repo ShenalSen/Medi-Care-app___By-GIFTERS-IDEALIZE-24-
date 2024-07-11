@@ -3,27 +3,19 @@
     "development"
   ],
   "hints": {
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
+      }
+    ],
+    "highest-available-document-mode": "off",
+    "no-inline-styles": "off",
+    "button-type": "off",
     "axe/name-role-value": [
       "default",
       {
         "link-name": "off"
-      }
-    ],
-    "no-inline-styles": "off",
-    "compat-api/css": [
-      "default",
-      {
-        "ignore": [
-          "max-width: fit-content",
-          "max-height: fit-content",
-          "backdrop-filter"
-        ]
-      }
-    ],
-    "axe/forms": [
-      "default",
-      {
-        "label": "off"
       }
     ]
   }

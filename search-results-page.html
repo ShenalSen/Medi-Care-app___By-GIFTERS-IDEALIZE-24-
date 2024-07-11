@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="search-results-main.css">
+    <link rel="stylesheet" href="search-results-fold.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Background</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="search-container">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="button-container">
+                    <div class="circle-arrow">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <span class="button-text">Go Back</span>
+                </div>
+            </a>
+
+            <div class="search-bar">
+                <div class="search-input-container">
+                    <img src="search icon.png" alt="Search Icon" class="search-icon">
+                    <input type="text" v-model="searchQuery"
+                        placeholder="I have a history of allergies and asthma. I need advice on managing my symptoms...">
+                    <div class="loading-icon" v-if="loading"><i class="fas fa-spinner"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="sidebar-items-container">
+                <h1 class="filter-mark">Filter by</h1>
+                <div class="sidebar-item" v-for="item in sidebarItems" :key="item.id"
+                    :class="{ active: activeItem === item.id }" @click="setActiveItem(item.id)">
+                    <i :class="item.icon"></i>
+                    <span>{{ item.text }}</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="content-container" class="content-container">
+            <div id="search-results">
+                <h1 id="title-s">Search Results</h1>
+            </div>
+            <div v-if="activeItem === 'ai-advice'" class="container-main">
+
+
+
+                <div class="search-results">
+
+                    <div class="chat-container">
+                        <div class="user-info">
+                            <div class="username">user 12034565</div>
+                            <div class="icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="kunka">
+                            I have a history of allergies and asthma. I need advice on managing my symptoms.
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <div class="result-ai" id="result-ai"></div>
+
+                    </div>
+                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                        type="module"></script>
+                    <dotlottie-player src="https://lottie.host/02b4f490-0965-4d43-bc71-3fb633505dc3/GdXpzKcUbg.json"
+                        background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay
+                        id="robot"></dotlottie-player>
+
+                </div>
+
+
+            </div>
+            <div v-if="activeItem === 'community'" class="container-main">
+
+                <div class="filters">
+                    <button @click="results" class="results">5 results</button>
+                    <div class="rightfilset">
+                        <select v-model="selectedFilter">
+                            <option value="mostStars">Most Stars</option>
+                            <option value="recentlyUpdated">Recently Updated</option>
+                            <option value="relatedDisease">Related Disease</option>
+                            <option value="mostCommented">Most Commented</option>
+                        </select>
+                        <button @click="save" class="results-1">Save</button>
+                        <button class="results-1">• • •</button>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="search-results">
+                        <div v-for="result in filteredResults" :key="result.id" class="result">
+                            <div class="result-text">
+                                <p><b><span id="usercomponent">{{ result.user }}</span></b> posted {{ result.postedTime
+                                    }}</p>
+                                <div class="result-actions">
+                                    <div class="star">
+                                        <img src="pngwing.com.png" alt="star">
+                                        <span>{{ result.stars }}</span>
+                                    </div>
+                                    <div class="comment">
+                                        <img src="pngwing.com (1).png" alt="comment">
+                                        <span>{{ result.comments }}</span>
+                                    </div>
+                                </div>
+                                <p class="text">{{ result.text }}</p>
+                                <p id="tagline">@{{ result.tag }}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div v-if="activeItem === 'treatments'" class="container-main">
+                <div class="filters">
+                    <button @click="results" class="results">7 results</button>
+                    <div class="rightfilset">
+                        <select v-model="selectedFilter">
+                            <option value="mostStars">Most Stars</option>
+                            <option value="recentlyUpdated">Recently Updated</option>
+                            <option value="relatedDisease">Related Disease</option>
+                            <option value="mostCommented">Most Commented</option>
+                        </select>
+                        <button @click="save" class="results-1">Save</button>
+                        <button class="results-1">• • •</button>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="search-result-medi">
+                        <div class="continens">
+                            <div class="componentia">
+                                <div class="iconus">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="textus">
+                                    <div class="titulus">Dr Rajeevan Ramakumar</div>
+                                    <div class="subtitulus">Allergist / Immunologist</div>
+                                </div>
+                                <div class="actio">
+                                    <button class="button"><i class="fas fa-stethoscope"></i> Channel</button>
+                                </div>
+                                <div class="recensiones">
+                                    <i class="fas fa-star"></i> 14 &nbsp; <i class="fas fa-comments"></i> 78 reviews
+                                </div>
+                            </div>
+                            <div class="componentia">
+                                <div class="iconus">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="textus">
+                                    <div class="titulus">Asiri Medical Hospital-Colombo 05</div>
+                                    <div class="subtitulus">Hospital</div>
+                                </div>
+                                <div class="actio">
+                                    <button class="button"><i class="fas fa-stethoscope"></i> Channel</button>
+                                </div>
+                                <div class="recensiones">
+                                    <i class="fas fa-star"></i> 135 &nbsp; <i class="fas fa-comments"></i> 400 reviews
+                                </div>
+                            </div>
+                            <div class="componentia">
+                                <div class="iconus">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="textus">
+                                    <div class="titulus">Zeos Medical PLC</div>
+                                    <div class="subtitulus">Medical center</div>
+                                </div>
+                                <div class="actio">
+                                    <button class="button"><i class="fas fa-stethoscope"></i> Channel</button>
+                                </div>
+                                <div class="recensiones">
+                                    <i class="fas fa-star"></i> 560 &nbsp; <i class="fas fa-comments"></i> 267 reviews
+                                </div>
+                            </div>
+                            <div class="componentia">
+                                <div class="iconus">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="textus">
+                                    <div class="titulus">Dr Ajith Muthukumarana</div>
+                                    <div class="subtitulus">Allergist</div>
+                                </div>
+                                <div class="actio">
+                                    <button class="button"><i class="fas fa-stethoscope"></i> Channel</button>
+                                </div>
+                                <div class="recensiones">
+                                    <i class="fas fa-star"></i> 14 &nbsp; <i class="fas fa-comments"></i> 20 reviews
+                                </div>
+                            </div>
+                            <div class="componentia">
+                                <div class="iconus">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="textus">
+                                    <div class="titulus">Dr Shakeer Ahmed</div>
+                                    <div class="subtitulus">Immunologist</div>
+                                </div>
+                                <div class="actio">
+                                    <button class="button"><i class="fas fa-stethoscope"></i> Channel</button>
+                                </div>
+                                <div class="recensiones">
+                                    <i class="fas fa-star"></i> 20 &nbsp; <i class="fas fa-comments"></i> 91 reviews
+                                </div>
+                            </div>
+                            <div class="componentia">
+                                <div class="iconus">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div class="textus">
+                                    <div class="titulus">Kings Hospital</div>
+                                    <div class="subtitulus">Hospital</div>
+                                </div>
+                                <div class="actio">
+                                    <button class="button"><i class="fas fa-stethoscope"></i> Channel</button>
+                                </div>
+                                <div class="recensiones">
+                                    <i class="fas fa-star"></i> 564 &nbsp; <i class="fas fa-comments"></i> 250 reviews
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="search-results.js"></script>
+
+</body>
+
+</html>
