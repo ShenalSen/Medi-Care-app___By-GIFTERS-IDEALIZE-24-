@@ -110,19 +110,40 @@ footer.mount('#footer-bar');
 const headMsg = Vue.createApp({
     data() {
         return {
+            currentSlide: 0,
+            slides: [
+                "first slide",
+                "second slide",
+            ],
+            interval: null,
             showFirst: true
         };
     },
+    mounted() {
+        this.startSlider();
+    },
     methods: {
-        togleHeadMsg() {
-            this.showFirst = !this.showFirst;
+        startSlider() {
+            this.interval = setInterval(() => {
+                this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+                this.showFirst = !this.showFirst;
+                console.log(this.currentSlide + " " + this.showFirst);
+            }, 5000) // change the slide every 5 seconds
+        },
+        pauseSlider() {
+            clearInterval(this.interval);
         }
+    },
+    beforeUnmount() {
+        clearInterval(this.interval);
     }
 });
 
 headMsg.mount('#head-msg');
 
 
+
+// ---------------------------------------------------------------------------
 const tag = Vue.createApp({
     data() {
         return {
