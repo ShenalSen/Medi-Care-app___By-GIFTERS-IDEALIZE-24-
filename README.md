@@ -1,4 +1,4 @@
-# Medi Care
+# Medi Care Web Application by GIFTERS (IDEALIZE 2024)
 
 Medi Care is a user-friendly medical website offering accessible and trustworthy information on common health issues. Our goal is to provide individuals with a reliable resource to better understand and address their health concerns.
 
